@@ -11,8 +11,10 @@
     "react": "16.6.3",
     "react-native": "0.58.6",
     "react-native-camera-kit": "^7.3.4",
+    "react-native-swipeout": "^2.3.6",
     "react-navigation": "^2.18.3",
-    "scandit-react-native": "^5.10.1"
+    "scandit-react-native": "git+https://github.com/temideoye/barcodescanner-sdk-react-native.git",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
