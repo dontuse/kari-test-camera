@@ -1,4 +1,4 @@
-import { BarcodePicker, ScanditModule, Barcode, ScanSettings } from 'scandit-react-native';
+
 
 import React, { Component } from 'react'
 import { View, Dimensions, ScrollView} from 'react-native';
@@ -8,6 +8,16 @@ const height = Dimensions.get('window').height; // full height
 import { Container, Button, Icon, Text, Grid, Col } from 'native-base';
 import uuidv4 from 'uuid/v4';
 import Swipeout from 'react-native-swipeout';
+import {
+  BarcodePicker,
+  ScanditModule,
+  ScanSession,
+  Barcode,
+  Rect,
+  SymbologySettings,
+  ScanSettings,
+  ScanOverlay
+} from 'scandit-react-native';
 
 
 // Set your license key.
@@ -37,6 +47,9 @@ export default class ScanditCamera extends React.Component {
 
   componentDidMount() {
     this.settings = new ScanSettings();
+    this.settings.activeScanningAreaPortrait = new Rect(0, 0.48, 1, 0.04);
+    this.settings.activeScanningAreaLandscape = new Rect(0, 0.48, 1, 0.04);
+
     this.settings.setSymbologyEnabled(Barcode.Symbology.EAN13, true);
     this.settings.setSymbologyEnabled(Barcode.Symbology.EAN8, true);
     this.settings.setSymbologyEnabled(Barcode.Symbology.UPCA, true);
@@ -94,12 +107,13 @@ export default class ScanditCamera extends React.Component {
     this.setState({ buttonDisabled: false });
     this.isBarcodeRead = false;
 
-    // this.scanner.pauseScanning();
+    this.scanner.pauseScanning();
   }
 
   stopScanning() {
     this.setState({ buttonDisabled: false });
     this.isBarcodeRead = false;
+    this.scanner.pauseScanning();
   }
 
   startScanning() {
