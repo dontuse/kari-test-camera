@@ -169,12 +169,22 @@ export default class ScanditCamera extends React.Component {
   }
 
   onScan(session) {
-    console.log('sess', session);
-    this.state.codes.push({
-      codes: [...this.state.codes, session.newlyRecognizedCodes[0].data],
-    });
+    console.log('sess', session.newlyRecognizedCodes[0].data);
     // this.setState(this.state);
     // this.setTimer();
+
+    const code = this.mapToBarcode(session.newlyRecognizedCodes[0].data);
+
+    if (this.isBarcodeRead) {
+      // if (isCell(barcode)) {
+      //   this.addCell(code);
+      // } else {
+        
+      // }
+      this.addBarcode(code);
+      //playBeep();
+      this.pauseScanning();
+    }
   }
 
   render() {
