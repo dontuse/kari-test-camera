@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import Wix from './Wix';
 import ScanditCamera from './ScanditCamera';
+import { Container, Button, Icon, Text, Grid, Col } from 'native-base';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -13,40 +14,30 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <View style={{marginBottom: 20, fontSize: 20}}>
-        <Button
-          title="Wix"
-          onPress={() => this.props.navigation.navigate('wix')}
-          
-        />
+        <View style={{ marginBottom: 40, fontSize: 20 }}>
+          <Button large success onPress={() => this.props.navigation.navigate('wix')}><Text>Wix camera</Text></Button>
         </View>
-       
-        <Button
-          title="Scandit"
-          onPress={() => this.props.navigation.navigate('scandit')}
-        />
+        <View>
+          <Button large danger onPress={() => this.props.navigation.navigate('scandit')}><Text>Scandit camera</Text></Button>
+        </View>
       </View>
     );
   }
 }
 
-
-class Scandit extends React.Component {
-  render() {
-    return (
-      <ScanditCamera />
-    );
-  }
-}
-
-
+// class Scandit extends React.Component {
+//   render() {
+//     return (
+//       <ScanditCamera />
+//     );
+//   }
+// }
 
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     wix: Wix,
-    scandit: Scandit,
+    scandit: ScanditCamera
   },
   {
     initialRouteName: 'Home'

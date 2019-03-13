@@ -40,7 +40,7 @@ export default class ScanditCamera extends React.Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'Wix camera',
+      title: 'Scandit',
       
     };
   }
