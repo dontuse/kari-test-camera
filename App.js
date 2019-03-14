@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import Wix from './Wix';
+import WixNoBtn from './WixNoBtn';
 import ScanditCamera from './ScanditCamera';
+import ScanditCameraNoBtn from './ScanditCameraNoBtn';
 import { Container, Button, Icon, Text, Grid, Col } from 'native-base';
 
 const instructions = Platform.select({
@@ -19,6 +21,15 @@ class HomeScreen extends React.Component {
         </View>
         <View>
           <Button large danger onPress={() => this.props.navigation.navigate('scandit')}><Text>Scandit camera</Text></Button>
+        </View>
+        <View style={{marginBottom: 20, marginTop: 50}}>
+          <Text style={{fontSize: 30}}>Без кнопки</Text>
+        </View>
+        <View style={{ marginBottom: 40, fontSize: 20 }}>
+          <Button large success onPress={() => this.props.navigation.navigate('wix-no-button')}><Text>Wix camera no button</Text></Button>
+        </View>
+        <View>
+          <Button large danger onPress={() => this.props.navigation.navigate('scandit-no-button')}><Text>Scandit camera no button</Text></Button>
         </View>
       </View>
     );
@@ -37,7 +48,9 @@ const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     wix: Wix,
-    scandit: ScanditCamera
+    scandit: ScanditCamera,
+    'wix-no-button': WixNoBtn,
+    'scandit-no-button': ScanditCameraNoBtn,
   },
   {
     initialRouteName: 'Home'
