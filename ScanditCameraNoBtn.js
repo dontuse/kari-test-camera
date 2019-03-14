@@ -20,13 +20,6 @@ import {
 } from 'scandit-react-native';
 
 
-// Set your license key.
-ScanditModule.setAppKey(
-  'AfN8D1hKRVGpNTmJfxRiwrAlYOjPJs8EmGXlCghtIHa7fT+wgXbTocgia7R6d5Bcxnc8sepW6sNGAybofGIVnHZ+LFuXWhA3Wjfde6lx2FQ7YrSSpHbADYQuIVKKGso32yH7zFIP3ObpRx+Bzb4F15+AZXpRyLOeAz3TJLNnkrmXTr1lu6DmJnEc6wkXlP0juUyNouhSGCqFaguBdje0pYc3gUrs6Yw/1aGtOGctiDPZu2ct/+G4xSp3CL0zhNTiBRSqGCHM8GiMj8iai071XHCsZzcCV4+wLVhhu/IcYPH6tBi3P8ArfT/g+OfQymtzbFJYXzbS+a9/qocNG88vT49+LrGIO+d93TEbVGb3XARP5dU8wDjB+5fhL26Zw/skfsu38TayHlM/AaRhj6wYMl6cctoNW5gty+kMhezh5ycYlSRvGqF1YQowvLlC9Ns6AbhagTIsgfY398M3ZrdxTDjZvRGhnKTCO63N5Y36XLhnQRVrOrN/H7Izf8+4/nmpiycQypRtL8Hfp6kDxC7yxQ0cQ/2tsDgKhBgXkwj6n78SAqWPem/jE+Ar925O5kraEjhQfwWJLLRMzmpIEI1CAcqV4KStbCm/f2csykdHa+QEsmRHEsFGeSrYN3r6/s2gg/tNiDAi5aN/lxnIdOQpx+9qMJrxKtD5P14KIAYdmkipMHKqpHDvvgBN7kdjqqx4bEca6VoChIjY5ZF4HsL2lKRjIF+hvkwESqUbvD4NqsJFy4uGjALpOJX2jEk5Ph7TlEKY11DKULthk6hfs+A3cV6zv3KFMi8CQwGa/iOG9kM1w1LxUCQ='
-);
-
-
-
 export default class ScanditCamera extends React.Component {
   state = {
     buttonDisabled: true,
@@ -70,28 +63,14 @@ export default class ScanditCamera extends React.Component {
       .activeSymbolCounts = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
     /* For details on defaults and how to calculate the symbol counts for each symbology, take
        a look at http://docs.scandit.com/stable/c_api/symbologies.html. */
-    console.log('this.scanner', this.scanner);
-    this.scanner.startScanning();
+    // console.log('this.scanner', this.scanner);
+   
     this.scanner.setVibrateEnabled(false);
     this.scanner.setBeepEnabled(false)
     
     this.resumeScanning();
      // this.pauseScanning();
-
-    // this.setState({
-    //   codes: [
-    //     { uuid: '1', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '2', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '3', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '41', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '42', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '43', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '44', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '45', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '46', data: '2100062567756', symbology: 'sds' },
-    //     { uuid: '47', data: '2100062567756', symbology: 'sds' },
-    //   ],
-    // });
+  
   }
 
   componentWillUnmount() {
@@ -129,20 +108,6 @@ export default class ScanditCamera extends React.Component {
     this.scanner.startScanning();
   }
 
-  confirm() {
-    //this.closeModal();
-    // console.log('confirm', this.state);
-    this.pauseScanning();
-    //const type = this.props.navigation.state.params.type;
-    // this.props.dispatch(
-    //   tsdActions.stockAction({
-    //     type,
-    //     codes: this.state.codes,
-    //     cell: this.state.cell,
-    //   }),
-    // );
-    this.props.navigation.navigate('tsd/stock');
-  }
 
   cancel() {
     this.pauseScanning();
