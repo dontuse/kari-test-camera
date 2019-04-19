@@ -74,6 +74,7 @@ export default class ScanditCamera extends React.Component {
   }
 
   componentWillUnmount() {
+    console.log('unmount ====');
     this.stopScanning();
     // this.willBlurListener.remove();
   }
