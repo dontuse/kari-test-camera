@@ -41,6 +41,7 @@ export default class AOEdetails extends React.Component {
                 // const product = this.props.products[code.data];
                 return (
                   <View
+                    key={index}
                     style={{
                       paddingLeft: 20,
                       marginBottom: 0,
