@@ -26,6 +26,17 @@ class HomeScreen extends React.Component {
       <Container>
         <Content>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ marginBottom: 20, marginTop: 50 }}>
+              <Text style={{ fontSize: 30 }}>Массовое сканирование QR:</Text>
+            </View>
+            <View style={{ marginBottom: 40, fontSize: 20 }}>
+              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
+                <Text>Scandit camera QR CODE AOE</Text>
+              </Button>
+            </View>
+            <View style={{flex: 1, background: 'black', height: 4, width: '100%', marginBottom: 20}}>
+            <Text>------------------</Text>
+            </View>
             <View style={{ marginBottom: 40, fontSize: 20 }}>
               <Button large success onPress={() => this.props.navigation.navigate('wix')}>
                 <Text>Wix camera</Text>
@@ -49,69 +60,7 @@ class HomeScreen extends React.Component {
                 <Text>Scandit camera no button</Text>
               </Button>
             </View>
-            <View style={{ marginBottom: 20, marginTop: 50 }}>
-              <Text style={{ fontSize: 30 }}>Массовое сканирование QR:</Text>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
-              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
-                <Text>Scandit camera QR CODE AOE</Text>
-              </Button>
-            </View>
+            
           </View>
         </Content>
       </Container>
