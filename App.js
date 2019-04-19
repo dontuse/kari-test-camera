@@ -6,6 +6,7 @@ import WixNoBtn from './WixNoBtn';
 import ScanditCamera from './ScanditCamera';
 import ScanditCameraNoBtn from './ScanditCameraNoBtn';
 import ScanditAOE from './ScanditAOE';
+import ScanditAOE2 from './ScanditAOE2';
 import AOEdetails from './AOEdetails';
 import { Container, Button, Icon, Text, Grid, Col, Content } from 'native-base';
 import { ScanditModule } from 'scandit-react-native';
@@ -29,11 +30,16 @@ class HomeScreen extends React.Component {
           <View style={{ marginBottom: 20, marginTop: 50 }}>
               <Text style={{ fontSize: 30 }}>Массовое сканирование QR:</Text>
             </View>
-            <View style={{ marginBottom: 40, fontSize: 20 }}>
+            <View style={{ marginBottom: 10, fontSize: 20 }}>
               <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
                 <Text>Scandit camera QR CODE AOE</Text>
               </Button>
             </View>
+            {/* <View style={{ marginBottom: 40, fontSize: 20 }}>
+              <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe2')}>
+                <Text>setWorkingRange LONG</Text>
+              </Button>
+            </View> */}
             <View style={{flex: 1, background: 'black', height: 4, width: '100%', marginBottom: 20}}>
             <Text>------------------</Text>
             </View>
@@ -84,6 +90,7 @@ const RootStack = createStackNavigator(
     'wix-no-button': WixNoBtn,
     'scandit-no-button': ScanditCameraNoBtn,
     'scandit-aoe': ScanditAOE,
+    'scandit-aoe2': ScanditAOE2,
     aoeDetails: AOEdetails
   },
   {
