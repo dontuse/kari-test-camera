@@ -7,6 +7,7 @@ import ScanditCamera from './ScanditCamera';
 import ScanditCameraNoBtn from './ScanditCameraNoBtn';
 import ScanditAOE from './ScanditAOE';
 import ScanditAOE2 from './ScanditAOE2';
+import ScanditAOEReject from './ScanditAOEReject';
 import AOEdetails from './AOEdetails';
 import { Container, Button, Icon, Text, Grid, Col, Content } from 'native-base';
 import { ScanditModule } from 'scandit-react-native';
@@ -33,6 +34,11 @@ class HomeScreen extends React.Component {
             <View style={{ marginBottom: 10, fontSize: 20 }}>
               <Button large success onPress={() => this.props.navigation.navigate('scandit-aoe')}>
                 <Text>Scandit camera QR CODE AOE</Text>
+              </Button>
+            </View>
+            <View style={{ marginBottom: 10, fontSize: 20 }}>
+              <Button large success onPress={() => this.props.navigation.navigate('ScanditAOEReject')}>
+                <Text>ScanditAOEReject</Text>
               </Button>
             </View>
             {/* <View style={{ marginBottom: 40, fontSize: 20 }}>
@@ -91,6 +97,7 @@ const RootStack = createStackNavigator(
     'scandit-no-button': ScanditCameraNoBtn,
     'scandit-aoe': ScanditAOE,
     'scandit-aoe2': ScanditAOE2,
+    'ScanditAOEReject': ScanditAOEReject,
     aoeDetails: AOEdetails
   },
   {
