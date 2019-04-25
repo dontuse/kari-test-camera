@@ -58,9 +58,9 @@ export default class ScanditCamera extends React.Component {
     console.log('Scandit.ScanOverlay.GuiStyle', ScanOverlay.MatrixScanState);
 
     this.scanner.setGuiStyle(ScanOverlay.GuiStyle.MATRIX_SCAN);
-    this.scanner.setMatrixScanHighlightingColor('stateLocalized', 'orange');
+    // this.scanner.setMatrixScanHighlightingColor('stateLocalized', 'orange');
     // this.scanner.setMatrixScanHighlightingColor('stateRecognized','#dc101070');
-    this.scanner.setMatrixScanHighlightingColor('stateRejected', 'red');
+    // this.scanner.setMatrixScanHighlightingColor('stateRejected', 'red');
 
     // this.scanner.setMatrixScanHighlightingColor('stateLocalized', 'blue');
     // MATRIX_SCAN_STATE_LOCALIZED
@@ -168,7 +168,7 @@ export default class ScanditCamera extends React.Component {
     console.log('onRecognizeNewCodes', session);
 
     // session.rejectCode('01204090@36@47908@0000000009')
-    // let i = 0;
+    let i = 0;
 
     session.newlyTrackedCodes.forEach(function(barcode) {
       if (barcode.data !== '2100036142410') {
@@ -176,8 +176,10 @@ export default class ScanditCamera extends React.Component {
         //console.log('i', i);
 
         session.rejectTrackedCode(barcode);
-      }
+      } 
     });
+
+    console.log(session);
 
     session.newlyTrackedCodes.forEach(x => {
       console.log('x', x);
